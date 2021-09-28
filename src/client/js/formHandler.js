@@ -6,7 +6,6 @@ async function handleSubmit(event) {
 
     // check what text was put into the form field
     let formText = document.getElementById('url').value
-    console.log(formText);
     if (!!formText) {
         console.log("::: Form Submitted :::")
 
@@ -18,7 +17,6 @@ async function handleSubmit(event) {
             }
         })
 
-        console.log(response);
         document.getElementById('polarity').innerHTML = 'Polarity: ' + response.data.score_tag;
         document.getElementById("agreement").innerHTML = `Agreement: ${response.data.agreement}`;
         document.getElementById("subjectivity").innerHTML = `Subjectivity: ${response.data.subjectivity}`;

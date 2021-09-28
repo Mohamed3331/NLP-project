@@ -16,6 +16,10 @@ app.get('/', function (req, res) {
     // res.sendFile(path.resolve('../client/views/index.html'));
 })
 
+app.get('/test', (req, res) => {
+    res.status(200).send({message: 'Tested'})
+})
+
 app.post('/nlp', async function (req, res) {
     const nlpResponse = await getText(req.body.text)
     res.status(200).send(nlpResponse)
